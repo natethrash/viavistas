@@ -1,0 +1,32 @@
+{
+  "name": "viavistas",
+  "version": "1.0.0",
+  "description": "Codename: Via Vistas; Project aims to help transform community perception of public transportation in San Antonio by showing real-world positive impact of ridership financially, environmentally, and health-wise.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run build:watch\" \"nodemon src/index.js\"",
+    "build:watch": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanhouston92/viavistas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanhouston92/viavistas/issues"
+  },
+  "homepage": "https://github.com/nathanhouston92/viavistas#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "node": "^9.5.0",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.15.1"
+  }
+}
