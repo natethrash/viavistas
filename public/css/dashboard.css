@@ -1,0 +1,62 @@
+/*-----------*/
+/* DASHBOARD */
+/*-----------*/
+.show {
+  display: block !important;
+}
+nav {
+  background: transparent !important;
+}
+.navbar-fixed {
+  position: fixed !important;
+}
+.section {
+  padding: -50px;
+}
+
+.intro-section {
+  background: #636363;
+  color: #fff;
+}
+.intro-wrapper {
+  text-align: center;
+}
+.intro-wrapper i {
+  font-size: 2em;
+}
+.content-wrapper {
+  font-family: "Montserrat", sans-serif;
+  margin-left: 45vw;
+}
+
+.content-wrapper h1 {
+  font-family: "Lato", sans-serif;
+}
+
+.fin-section {
+  background-color: #b5cd5a;
+}
+.fin-section .content-wrapper {
+  color: #fff;
+}
+
+.env-section {
+  background-color: #3dadd9;
+}
+.env-section .content-wrapper {
+  color: #fff;
+}
+
+.health-section {
+  background-color: #c72a41;
+}
+.health-section .content-wrapper {
+  color: #fff;
+}
+
+.rewards-section {
+  background-color: #ffd256;
+}
+.rewards-section .content-wrapper {
+  color: #fff;
+}
