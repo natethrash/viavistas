@@ -41,6 +41,18 @@ nav {
   font-family: "Lato", sans-serif;
 }
 
+.breadcrumb-nav {
+  position: absolute;
+  right: 3vw;
+  top: 45vh;
+  display: inline-block;
+  z-index: 999;
+}
+
+.breadcrumb-nav .nav-btn {
+  margin-bottom: 1em;
+}
+
 .fin-section {
   background-color: #b5cd5a;
 }
