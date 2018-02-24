@@ -24,4 +24,10 @@ $(document).ready(function() {
     //Design
     lazyLoading: true
   });
+
+  $(".icon-block").on("click", function(e) {
+    $(this)
+      .find("p")
+      .toggleClass("invisible");
+  });
 });

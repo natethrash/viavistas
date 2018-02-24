@@ -4,6 +4,11 @@
 .show {
   display: block !important;
 }
+
+.invisible {
+  visibility: hidden;
+}
+
 nav {
   background: transparent !important;
 }
@@ -23,6 +28,9 @@ nav {
 }
 .intro-wrapper i {
   font-size: 2em;
+}
+.icon-block:hover {
+  background: rgb(138, 137, 137);
 }
 .content-wrapper {
   font-family: "Montserrat", sans-serif;
