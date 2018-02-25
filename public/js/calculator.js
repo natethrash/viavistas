@@ -41,7 +41,7 @@ function wearTearCostPerSwap (wearTearCostPerMile, commuteDistance) {
 }
 
 function totalMoneySavedPerSwap (gasMoneySavedPerSwap, wearTearCostPerSwap, busFare) {
-    return gasMoneySavedPerSwap + wearTearCostPerSwap - (2 * busFare);
+    return Math.floor(gasMoneySavedPerSwap + wearTearCostPerSwap - (2 * busFare));
 }
 
 // CALCULATIONS FROM CALENDAR INFO
@@ -57,7 +57,7 @@ function monthlyGasSavings (gasMoneySavedPerSwap, counterMonthToDate) {
 
 // CALCULATIONS FOR GOAL PAGE
 function maxSavingsWeek (totalMoneySavedPerSwap) {
-    return 5 * totalMoneySavedPerSwap;
+    return Math.floor(5 * totalMoneySavedPerSwap);
 }
 
 var maxSavingsWeekVar = maxSavingsWeek(totalMoneySavedPerSwapVar);
