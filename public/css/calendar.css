@@ -94,6 +94,7 @@ div#goals.container {
     padding: 55px;
     border: 1px solid lightgrey;
     background-color: #fbfbfb;
+    color: grey;
 }
 
 div#calendar.container {
