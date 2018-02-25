@@ -3,7 +3,6 @@ $(document).ready(function() {
   $("#fullpage").fullpage({
     //Navigation
     anchors: [
-      "intro-section",
       "fin-section",
       "env-section",
       "health-section",
