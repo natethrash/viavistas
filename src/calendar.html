@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="calendar.css">
+</head>
+<body>
+    <div class="container" id="calendar">
+        <div class="month">
+            <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>February
+                    <br>
+                    <span style="font-size:18px">2018</span>
+                    <br>
+                    <span style="font-size:13px">Week 1</span>
+                </li>
+            </ul>
+        </div>
+    <ul class="days">
+        <li id="one">
+            <div id="select-one">
+            MON
+            </div>
+        </li>
+        <li id="two">
+            <div id="select-two">
+                TUE
+            </div>
+        </li>
+        <li id="three">
+            <div id="select-three">
+                WED
+            </div>
+        </li>
+        <li id="four">
+            <div id="select-four">
+                THU
+            </div>
+        </li>
+        <li id="five">
+            <div id="select-five">
+                FRI
+            </div>
+        </li>
+    </ul>
+    </div>
+    <div class="container" id="goals">
+        <div class="row">
+            <div class="col s6">
+                <label for="weeklySavingsGoal"><strong>Weekly savings goal:</strong></label>
+                <input type="text" id="weeklySavingsGoal" value="10" readonly>
+            </div>
+            <div class="col s6">
+                <label for="maxSavingsWeek"><strong>Maximum savings possible:</strong></label>
+                <input type="text" id="maxSavingsWeek" value="400" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <label for="swapDays"># of Swap Days selected:</label>
+                <input type="text" id="swapDays" value="0" readonly>
+            </div>
+            <div class="col s6">
+                <label for="savingsPerSwap">Savings per Swap Day:</label>
+                <input type="text" id="savingsPerSwap" value="0" readonly>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <h5>SAVINGS:</h5>
+            <div class="col s6">
+                <label for="savingsWeek">Savings per week:</label>
+                <input type="text" id="savingsWeek" readonly>
+            </div>
+            <div class="col s6">
+                <label for="savingsMonth">Savings per month:</label>
+                <input type="text" id="savingsMonth" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <label for="currentSavingsWeek">Current savings this week:</label>
+                <input type="text" id="currentSavingsWeek" readonly>
+            </div>
+            <div class="col s6">
+                <label for="currentSavingsMonth">Current savings this month:</label>
+                <input type="text" id="currentSavingsMonth" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <h5>SWAPS NEEDED:</h5>
+            <div class="col s6">
+                <label for="swapsNeededWeek">Swaps needed per week:</label>
+                <input type="text" id="swapsNeededWeek" readonly>
+            </div>
+            <div class="col s6">
+                <label for="swapsLeft">Swaps Left To Go:</label>
+                <input type="text" id="swapsLeft" readonly>
+            </div>
+        </div>
+
+    </div>
+    <script src="index.js">
+    </script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+    </script>
+    <script>
+        var one = $("#select-one");
+        var two = $("#select-two");
+        var three = $("#select-three");
+        var four = $("#select-four");
+        var five = $("#select-five");
+        var six = $("#select-six");
+        var seven = $("#select-seven");
+        var dayArray = [one, two, three, four, five, six, seven];
+        var counter = 0;
+
+        // CALCULATION FROM CALENDAR INPUTS
+        var savingsWeek = $("#savingsWeek");
+        var savingsMonth = $("#savingsMonth");
+
+        // GOAL INPUTS
+        var weeklyGoal = $("#weeklySavingsGoal");
+        var savingsPerSwap = $("#savingsPerSwap");
+        var swapDays = $("#swapDays");
+        var maxSavings = $("#maxSavingsWeek");
+        var currentSavingsWeekInput = $("#currentSavingsWeek");
+        var currentSavingsMonthInput = $("#currentSavingsMonth");
+        var swapsNeeded = $("#swapsNeededWeek");
+        var swapsLeft = $("#swapsLeft");
+
+        function loopThroughDays (array) {
+            for (var i = 0; i < dayArray.length; i++) {
+                array[i].on("click", {
+                    getSelectedDay: array[i]
+                }, toggleSelectedClass);
+            }
+        }
+
+        function checkCounter () {
+            var array = [];
+            for (var i = 0; i < dayArray.length; i++) {
+
+                if (dayArray[i].hasClass("selected")) {
+                    array.push(dayArray[i]);
+                }
+            }
+           return array.length;
+        }
+
+        function toggleSelectedClass (event) {
+            event.data.getSelectedDay.toggleClass("selected");
+            counter = checkCounter();
+            var counterPerMonth = weeklytoMonthly(counter);
+
+            // Number of swap days selected
+            swapDays.val(counter);
+
+            // CALCS FROM CALENDAR
+            var weeklyGasSavingsVar = weeklyGasSavings(gasMoneySavedPerSwapVar, counter);
+            var monthlyGasSavingsVar = monthlyGasSavings(gasMoneySavedPerSwapVar, counterPerMonth);
+
+            // GOAL INPUTS
+            var weeklySavingsGoal = 10;
+            var maxSavingsWeek = maxSavingsWeekVar;
+            var currentSavingsWeekVar = currentSavingsWeek(counter, totalMoneySavedPerSwapVar);
+            var currentSavingsMonthVar = currentSavingsMonth(counterPerMonth, totalMoneySavedPerSwapVar);
+            var swapsNeededVar = swapsNeededPerWeek(10, totalMoneySavedPerSwapVar);
+            var swapsLeftVar = swapsLeftToGo(swapsNeededVar, counter);
+
+            // READ ALL VARIABLES INTO INPUTS
+            savingsPerSwap.val(totalMoneySavedPerSwapVar);
+            savingsWeek.val(weeklyGasSavingsVar);
+            savingsMonth.val(monthlyGasSavingsVar);
+
+            weeklyGoal.val(weeklySavingsGoal);
+            maxSavings.val(maxSavingsWeek);
+
+            currentSavingsWeekInput.val(currentSavingsWeekVar);
+            currentSavingsMonthInput.val(currentSavingsMonthVar);
+            swapsNeeded.val(swapsNeededVar);
+            swapsLeft.val(swapsLeftVar);
+        }
+        loopThroughDays (dayArray);
+    </script>
+</body>
+</html>
