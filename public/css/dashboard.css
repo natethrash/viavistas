@@ -14,6 +14,18 @@
   width: 5em;
 }
 
+.chip {
+  margin-top: 3em;
+}
+
+.center-justified {
+  display: inline-block;
+  text-align: justify;
+  -moz-text-align-last: left;
+  text-align-last: left;
+  margin: 0 auto;
+}
+
 .info-header {
   position: relative;
   font-size: 2em;
@@ -31,6 +43,26 @@
   margin-left: 34vw;
 }
 
+.profile-section {
+  background: orangered;
+  color: #fff;
+  text-align: center;
+}
+
+.profile-section ul {
+  line-height: 3em;
+  margin-top: 1em;
+}
+
+.profile-section h5 {
+  margin-top: 1em;
+}
+
+.profile-snapshot img {
+  width: 300px;
+  height: 300px;
+}
+
 nav {
   background: transparent !important;
 }
@@ -44,6 +76,7 @@ nav {
 .intro-section {
   background: #636363;
   color: #fff;
+  height: 110vh;
 }
 .intro-wrapper {
   text-align: center;

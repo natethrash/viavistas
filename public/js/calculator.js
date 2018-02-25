@@ -17,20 +17,20 @@ var counterWeektoDate;
 var counterMonthToDate;
 
 // CALCULATIONS
-var gasCostPerMileVar = gasCostPerMile(commuteDistance, carMPG, gasPrice);
-var gasCostPerTripVar = gasCostPerTrip(gasCostPerMileVar, commuteDistance);
+//var gasCostPerMileVar = gasCostPerMile(commuteDistance, carMPG, gasPrice);
+var gasCostPerTripVar = gasCostPerTrip(commuteDistance, carMPG, gasPrice);
 var gasMoneySavedPerSwapVar = gasMoneySavedPerSwap(gasCostPerTripVar);
 var wearTearCostPerSwapVar = wearTearCostPerSwap(wearTearCostPerMile, commuteDistance);
 var totalMoneySavedPerSwapVar = totalMoneySavedPerSwap(gasMoneySavedPerSwapVar, wearTearCostPerSwapVar, busFare);
 
 
-function gasCostPerMile (commuteDistance, carMPG, gasPrice) {
+function gasCostPerTrip (commuteDistance, carMPG, gasPrice) {
     return (commuteDistance/carMPG) * gasPrice;
 }
 
-function gasCostPerTrip (gasCostPerMile, commuteDistance) {
-    return gasCostPerMile * commuteDistance;
-}
+// function gasCostPerTrip (gasCostPerMile, commuteDistance) {
+//    return gasCostPerMile * commuteDistance;
+//}
 
 function gasMoneySavedPerSwap (gasCostPerTrip) {
     return gasCostPerTrip * 2;
@@ -40,24 +40,24 @@ function wearTearCostPerSwap (wearTearCostPerMile, commuteDistance) {
     return 2 * wearTearCostPerMile * commuteDistance;
 }
 
-function totalMoneySavedPerSwap (gasCostPerSwap, wearTearCostPerSwap, busFare) {
-    return gasCostPerSwap + wearTearCostPerSwap - (2 * busFare);
+function totalMoneySavedPerSwap (gasMoneySavedPerSwap, wearTearCostPerSwap, busFare) {
+    return Math.floor(gasMoneySavedPerSwap + wearTearCostPerSwap - (2 * busFare));
 }
 
 // CALCULATIONS FROM CALENDAR INFO
 function weeklytoMonthly (weeklyCounter) {
     return weeklyCounter * 4;
 }
-function weeklyGasSavings (gasCostPerSwap, counterWeekToDate) {
-    return gasCostPerSwap * counterWeekToDate;
+function weeklyGasSavings (gasMoneySavedPerSwap, counterWeekToDate) {
+    return gasMoneySavedPerSwap * counterWeekToDate;
 }
-function monthlyGasSavings (gasCostPerSwap, counterMonthToDate) {
-    return gasCostPerSwap * counterMonthToDate;
+function monthlyGasSavings (gasMoneySavedPerSwap, counterMonthToDate) {
+    return gasMoneySavedPerSwap * counterMonthToDate;
 }
 
 // CALCULATIONS FOR GOAL PAGE
 function maxSavingsWeek (totalMoneySavedPerSwap) {
-    return 5 * totalMoneySavedPerSwap;
+    return Math.floor(5 * totalMoneySavedPerSwap);
 }
 
 var maxSavingsWeekVar = maxSavingsWeek(totalMoneySavedPerSwapVar);

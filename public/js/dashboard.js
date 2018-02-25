@@ -3,6 +3,8 @@ $(document).ready(function() {
   $("#fullpage").fullpage({
     //Navigation
     anchors: [
+      "profile-section",
+      "calendar-section",
       "fin-section",
       "env-section",
       "health-section",
@@ -13,20 +15,20 @@ $(document).ready(function() {
     //Scrolling
     css3: true,
     scrollingSpeed: 700,
-    autoScrolling: true,
-    fitToSection: true,
+    // autoScrolling: true,
+    // fitToSection: true,
+    scrollOverflow: true,
     fitToSectionDelay: 1000,
     easing: "easeInOutCubic",
     easingcss3: "ease",
     loopBottom: true,
-    loopTop: true,
-    loopHorizontal: true,
-    continuousVertical: true,
-
+    scrollOverflow: true,
+    bigSectionsDestination: top,
     //Accessibility
     keyboardScrolling: true,
     animateAnchor: true,
     recordHistory: true,
+    responsiveHeight: "100vh",
 
     //Design
     lazyLoading: true
