@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/jquery.fullpage.min.css">
     <link href="css/dashboard.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/calendar.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 </head>
 
@@ -52,59 +53,120 @@
             </div>
         </nav>
     </div>
-
+    <!--CALCULATOR PAGE-->
     <div id="fullpage">
-        <!-- <div class="section intro-section">
+        <div class="section intro-section fp-auto-height">
             <div class="intro-wrapper">
                 <div class="row">
-                    <div class="col-s12">
-                        <h1>Intro Text</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s4">
-                        <div class="icon-block">
-                            <h2 class="center teal-text text-accent-3">
-                                <i class="material-icons">flash_on</i>
-                            </h2>
-                            <h5 class="center">Inspired Change</h5>
 
-                            <p class="light invisible">Our eVoCounter makes sure you know the extent of your positive impact on the environment as well
-                                as the financial and health benefits that come with the regular use of public transport.
-                                Having an awareness of the benefits of smart transportation use can help turn your actions
-                                into habits, and habits into a rewarding lifestyle.</p>
-                        </div>
-                    </div>
-                    <div class="col s4">
-                        <div class="icon-block">
-                            <h2 class="center teal-text text-accent-3">
-                                <i class="material-icons">group</i>
-                            </h2>
-                            <h5 class="center">Interactive UI</h5>
+                    <div class="container">
 
-                            <p class="light invisible">By creating a "gamified" platform that makes daily user engagement with VIA fun and interactive,
-                                we hope to encourage the public to weaken their reliance on personal transportation and use
-                                public bus systems to get to where they need to be. For example, a rider can set goals to
-                                increase his or her bus ridership and witness the positive impacts on environment, personal
-                                health, and their wallet over time.</p>
+                    <div class="container" id="calendar">
+                        <div class="month">
+                            <ul>
+                                <li class="prev">&#10094;</li>
+                                <li class="next">&#10095;</li>
+                                <li>February
+                                    <br>
+                                    <span style="font-size:18px">2018</span>
+                                    <br>
+                                    <span style="font-size:13px">Week 1</span>
+                                </li>
+                            </ul>
                         </div>
+                        <ul class="days">
+                            <li id="one">
+                                <div id="select-one">
+                                    MON
+                                </div>
+                            </li>
+                            <li id="two">
+                                <div id="select-two">
+                                    TUE
+                                </div>
+                            </li>
+                            <li id="three">
+                                <div id="select-three">
+                                    WED
+                                </div>
+                            </li>
+                            <li id="four">
+                                <div id="select-four">
+                                    THU
+                                </div>
+                            </li>
+                            <li id="five">
+                                <div id="select-five">
+                                    FRI
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col s4">
-                        <div class="icon-block">
-                            <h2 class="center teal-text text-accent-3">
-                                <i class="material-icons">settings</i>
-                            </h2>
-                            <h5 class="center">Easy To Use</h5>
-
-                            <p class="light invisible">We have developed eVoCounter to deliver a simple, user friendly interface that is able to be
-                                used by anybody, from kids to seniors. We want everyone to have the opportunity to see the
-                                positive changes they can make through responsible use of transportation, and we believe
-                                that eVoCounter can directly influence the way people see public transportation in the future.</p>
+                    <div class="container" id="goals">
+                        <div class="row">
+                            <div class="col s6">
+                                <label for="weeklySavingsGoal"><strong>Weekly savings goal:</strong></label>
+                                <input type="text" id="weeklySavingsGoal" value="10" readonly>
+                            </div>
+                            <div class="col s6">
+                                <label for="maxSavingsWeek"><strong>Maximum savings possible:</strong></label>
+                                <input type="text" id="maxSavingsWeek" value="400" readonly>
+                            </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <label for="swapDays"># of Swap Days selected:</label>
+                                <input type="text" id="swapDays" value="0" readonly>
+                            </div>
+                            <div class="col s6">
+                                <label for="savingsPerSwap">Savings per Swap Day:</label>
+                                <input type="text" id="savingsPerSwap" value="0" readonly>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <!--<h5>SAVINGS:</h5>-->
+                            <div class="col s6">
+                                <label for="savingsWeek">Savings per week:</label>
+                                <input type="text" id="savingsWeek" readonly>
+                            </div>
+                            <div class="col s6">
+                                <label for="savingsMonth">Savings per month:</label>
+                                <input type="text" id="savingsMonth" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <label for="currentSavingsWeek">Current savings this week:</label>
+                                <input type="text" id="currentSavingsWeek" readonly>
+                            </div>
+                            <div class="col s6">
+                                <label for="currentSavingsMonth">Current savings this month:</label>
+                                <input type="text" id="currentSavingsMonth" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!--<h5>SWAPS NEEDED:</h5>-->
+                            <div class="col s6">
+                                <label for="swapsNeededWeek">Swaps needed per week:</label>
+                                <input type="text" id="swapsNeededWeek" readonly>
+                            </div>
+                            <div class="col s6">
+                                <label for="swapsLeft">Swaps Left To Go:</label>
+                                <input type="text" id="swapsLeft" readonly>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+        </div>
+        <!--END OF CALC PAGE-->
         <div class="section fin-section">
             <div class="content-wrapper">
                 <div class="row">
@@ -179,7 +241,89 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/jquery.fullpage.extensions.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/vendors/scrolloverflow.js"></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/calculator.js"></script>
+    <script>
+        var one = $("#select-one");
+        var two = $("#select-two");
+        var three = $("#select-three");
+        var four = $("#select-four");
+        var five = $("#select-five");
+        var six = $("#select-six");
+        var seven = $("#select-seven");
+        var dayArray = [one, two, three, four, five, six, seven];
+        var counter = 0;
+
+        // CALCULATION FROM CALENDAR INPUTS
+        var savingsWeek = $("#savingsWeek");
+        var savingsMonth = $("#savingsMonth");
+
+        // GOAL INPUTS
+        var weeklyGoal = $("#weeklySavingsGoal");
+        var savingsPerSwap = $("#savingsPerSwap");
+        var swapDays = $("#swapDays");
+        var maxSavings = $("#maxSavingsWeek");
+        var currentSavingsWeekInput = $("#currentSavingsWeek");
+        var currentSavingsMonthInput = $("#currentSavingsMonth");
+        var swapsNeeded = $("#swapsNeededWeek");
+        var swapsLeft = $("#swapsLeft");
+
+        function loopThroughDays (array) {
+            for (var i = 0; i < dayArray.length; i++) {
+                array[i].on("click", {
+                    getSelectedDay: array[i]
+                }, toggleSelectedClass);
+            }
+        }
+
+        function checkCounter () {
+            var array = [];
+            for (var i = 0; i < dayArray.length; i++) {
+
+                if (dayArray[i].hasClass("selected")) {
+                    array.push(dayArray[i]);
+                }
+            }
+            return array.length;
+        }
+
+        function toggleSelectedClass (event) {
+            event.data.getSelectedDay.toggleClass("selected");
+            counter = checkCounter();
+            var counterPerMonth = weeklytoMonthly(counter);
+
+            // Number of swap days selected
+            swapDays.val(counter);
+
+            // CALCS FROM CALENDAR
+            var weeklyGasSavingsVar = weeklyGasSavings(gasMoneySavedPerSwapVar, counter);
+            var monthlyGasSavingsVar = monthlyGasSavings(gasMoneySavedPerSwapVar, counterPerMonth);
+
+            // GOAL INPUTS
+            var weeklySavingsGoal = 10;
+            var maxSavingsWeek = maxSavingsWeekVar;
+            var currentSavingsWeekVar = currentSavingsWeek(counter, totalMoneySavedPerSwapVar);
+            var currentSavingsMonthVar = currentSavingsMonth(counterPerMonth, totalMoneySavedPerSwapVar);
+            var swapsNeededVar = swapsNeededPerWeek(10, totalMoneySavedPerSwapVar);
+            var swapsLeftVar = swapsLeftToGo(swapsNeededVar, counter);
+
+            // READ ALL VARIABLES INTO INPUTS
+            savingsPerSwap.val(totalMoneySavedPerSwapVar);
+            savingsWeek.val(weeklyGasSavingsVar);
+            savingsMonth.val(monthlyGasSavingsVar);
+
+            weeklyGoal.val(weeklySavingsGoal);
+            maxSavings.val(maxSavingsWeek);
+
+            currentSavingsWeekInput.val(currentSavingsWeekVar);
+            currentSavingsMonthInput.val(currentSavingsMonthVar);
+            swapsNeeded.val(swapsNeededVar);
+            swapsLeft.val(swapsLeftVar);
+        }
+        loopThroughDays (dayArray);
+    </script>
+
 
 </body>
 
