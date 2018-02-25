@@ -21,6 +21,11 @@
 
 <body class="fp-responsive">
     <div id="breadcrumb-nav" class="breadcrumb-nav">
+        <div class="nav-btn" data-menu-anchor="calendar-section">
+            <a href="#calendar-section">
+                <img class="nav-btn" src="images/calendaricon.svg" />
+            </a>
+        </div>
         <div class="nav-btn" data-menu-anchor="fin-section">
             <a href="#fin-section">
                 <img class="nav-btn" src="images/dollaricon.svg" />
@@ -48,155 +53,157 @@
     <div class="navbar-fixed">
         <nav class="z-depth-0">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo center">
+                <a href="#!" class="brand-logo right">
                     <img class="logo" src="images/viafy.png" /> </a>
             </div>
         </nav>
+        <div class="chip right">
+            <img src="images/nate.jpg" alt="Contact Person"> Nate Thrash
+        </div>
     </div>
     <!--CALCULATOR PAGE-->
     <div id="fullpage">
-        <div class="section intro-section fp-auto-height">
+        <div class="section profile-section">
+            <div class="profile-snapshot">
+                <h2>Hi, Nate</h2>
+                <h5>Here are your current statistics</h5>
+                <ul class="center-justified">
+                    <li>Average commute: 20 mi</li>
+                    <li>Automobile MPG: 25</li>
+                    <li>Commutes per week: 5</li>
+                    <li>Weekly savings goal: $15</li>
+                </ul>
+                <!-- <img src="images/ProfilePage.png"> -->
+            </div>
+        </div>
+        <div class="section calendar-section fp-auto-height">
             <div class="intro-wrapper">
                 <div class="row">
 
                     <div class="container calculator">
 
-                    <div class="container" id="calendar">
-                        <div class="month">
-                            <ul>
-                                <li class="prev">&#10094;</li>
-                                <li class="next">&#10095;</li>
-                                <li>February
-                                    <br>
-                                    <span style="font-size:18px">2018</span>
-                                    <br>
-                                    <span style="font-size:13px">Week 1</span>
+                        <div class="container" id="calendar">
+                            <div class="month">
+                                <ul>
+                                    <li class="prev">&#10094;</li>
+                                    <li class="next">&#10095;</li>
+                                    <li>February
+                                        <br>
+                                        <span style="font-size:18px">2018</span>
+                                        <br>
+                                        <span style="font-size:13px">Week 1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="days">
+                                <li class="day-li" id="one">
+                                    <div id="select-one">
+                                        MON
+                                    </div>
+                                </li>
+                                <li class="day-li" id="two">
+                                    <div id="select-two">
+                                        TUE
+                                    </div>
+                                </li>
+                                <li class="day-li" id="three">
+                                    <div id="select-three">
+                                        WED
+                                    </div>
+                                </li>
+                                <li class="day-li" id="four">
+                                    <div id="select-four">
+                                        THU
+                                    </div>
+                                </li>
+                                <li class="day-li" id="five">
+                                    <div id="select-five">
+                                        FRI
+                                    </div>
                                 </li>
                             </ul>
                         </div>
-                        <ul class="days">
-                            <li class="day-li" id="one">
-                                <div id="select-one">
-                                    MON
+                        <div class="container" id="goals">
+                            <div class="row">
+                                <div class="col s6">
+                                    <label for="weeklySavingsGoal">
+                                        <strong>Weekly savings goal:</strong>
+                                    </label>
+                                    <input type="text" id="weeklySavingsGoal" value="10" readonly>
                                 </div>
-                            </li>
-                            <li class="day-li" id="two">
-                                <div id="select-two">
-                                    TUE
+                                <div class="col s6">
+                                    <label for="maxSavingsWeek">
+                                        <strong>Maximum savings possible:</strong>
+                                    </label>
+                                    <input type="text" id="maxSavingsWeek" value="41" readonly>
                                 </div>
-                            </li>
-                            <li class="day-li" id="three">
-                                <div id="select-three">
-                                    WED
+                            </div>
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <label for="swapDays"># of Swap Days selected:</label>
+                                    <input type="text" id="swapDays" value="0" readonly>
                                 </div>
-                            </li>
-                            <li class="day-li" id="four">
-                                <div id="select-four">
-                                    THU
+                                <div class="col s6">
+                                    <label for="savingsPerSwap">Savings per Swap Day:</label>
+                                    <input type="text" id="savingsPerSwap" value="8.2" readonly>
                                 </div>
-                            </li>
-                            <li class="day-li" id="five">
-                                <div id="select-five">
-                                    FRI
+                            </div>
+
+
+                            <div class="row">
+                                <!--<h5>SAVINGS:</h5>-->
+                                <div class="col s6">
+                                    <label for="savingsWeek">Savings per week:</label>
+                                    <input type="text" id="savingsWeek" readonly>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="container" id="goals">
-                        <div class="row">
-                            <div class="col s6">
-                                <label for="weeklySavingsGoal"><strong>Weekly savings goal:</strong></label>
-                                <input type="text" id="weeklySavingsGoal" value="10" readonly>
+                                <div class="col s6">
+                                    <label for="savingsMonth">Savings per month:</label>
+                                    <input type="text" id="savingsMonth" readonly>
+                                </div>
                             </div>
-                            <div class="col s6">
-                                <label for="maxSavingsWeek"><strong>Maximum savings possible:</strong></label>
-                                <input type="text" id="maxSavingsWeek" value="41" readonly>
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <label for="currentSavingsWeek">Current savings this week:</label>
+                                    <input type="text" id="currentSavingsWeek" readonly>
+                                </div>
+                                <div class="col s6">
+                                    <label for="currentSavingsMonth">Current savings this month:</label>
+                                    <input type="text" id="currentSavingsMonth" readonly>
+                                </div>
                             </div>
+
+                            <div class="row">
+                                <!--<h5>SWAPS NEEDED:</h5>-->
+                                <div class="col s6">
+                                    <label for="swapsNeededWeek">Swaps needed per week:</label>
+                                    <input type="text" id="swapsNeededWeek" readonly>
+                                </div>
+                                <div class="col s6">
+                                    <label for="swapsLeft">Swaps Left To Go:</label>
+                                    <input type="text" id="swapsLeft" readonly>
+                                </div>
+                            </div>
+
                         </div>
-
-                        <div class="row">
-                            <div class="col s6">
-                                <label for="swapDays"># of Swap Days selected:</label>
-                                <input type="text" id="swapDays" value="0" readonly>
-                            </div>
-                            <div class="col s6">
-                                <label for="savingsPerSwap">Savings per Swap Day:</label>
-                                <input type="text" id="savingsPerSwap" value="8.2" readonly>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <!--<h5>SAVINGS:</h5>-->
-                            <div class="col s6">
-                                <label for="savingsWeek">Savings per week:</label>
-                                <input type="text" id="savingsWeek" readonly>
-                            </div>
-                            <div class="col s6">
-                                <label for="savingsMonth">Savings per month:</label>
-                                <input type="text" id="savingsMonth" readonly>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col s6">
-                                <label for="currentSavingsWeek">Current savings this week:</label>
-                                <input type="text" id="currentSavingsWeek" readonly>
-                            </div>
-                            <div class="col s6">
-                                <label for="currentSavingsMonth">Current savings this month:</label>
-                                <input type="text" id="currentSavingsMonth" readonly>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!--<h5>SWAPS NEEDED:</h5>-->
-                            <div class="col s6">
-                                <label for="swapsNeededWeek">Swaps needed per week:</label>
-                                <input type="text" id="swapsNeededWeek" readonly>
-                            </div>
-                            <div class="col s6">
-                                <label for="swapsLeft">Swaps Left To Go:</label>
-                                <input type="text" id="swapsLeft" readonly>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <!--END OF CALC PAGE-->
         <div class="section fin-section">
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col s12">
-                        <p class="info-header">You saved
-                            <span> $3 </span> by taking the bus</p>
+                        <p class="info-header">You saved a total of
+                            <span id="savingsWeek"> $16 </span> by taking the bus. That's..</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12 m3"></div>
-                    <div class="col s12 m6">
-                        <div class="col s12 m4">
-                            <div class="info-circle">
-                                <p>4 coffees</p>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m4">
-                            <div class="info-circle">
-                                <p>4 coffees</p>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m4">
-                            <div class="info-circle">
-                                <p>4 coffees</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m3"></div>
+                <div class="info-text">
+                    <h5>1 month of netflix</h5>
+                    <h5>4 coffees</h5>
+                    <h5>1 new shirt</h5>
                 </div>
             </div>
         </div>
@@ -204,8 +211,9 @@
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col s12">
-                        <p class="info-header">You saved
-                            <span> $3 </span> by taking the bus</p>
+                        <p class="info-header">You prevented
+                            <span>0.067 lbs</span> in carbon emissions</p>
+                        <h5>planted 0.95 trees</h5>
                     </div>
                 </div>
             </div>
@@ -214,13 +222,14 @@
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col s12">
-                        <p class="info-header">You've walked
-                            <span> 6.7 miles </span>
+                        <p class="info-header">You've walked a total of
+                            <span> 2.7 miles </span>
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <h6>326 calories burned</h5>
+                    <h6>burned a total of
+                        <span>326</span> calories</h5>
                 </div>
             </div>
         </div>
@@ -228,8 +237,7 @@
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col s12">
-                        <p class="info-header">You saved
-                            <span> $3 </span> by taking the bus</p>
+                        <p class="info-header">You've earned 1 reward(s)!</p>
                     </div>
                 </div>
             </div>
@@ -241,6 +249,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/vendors/scrolloverflow.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/jquery.fullpage.extensions.min.js">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-overscroll/1.7.7/jquery.overscroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="js/calculator.js"></script>
@@ -269,7 +278,9 @@
         var swapsNeeded = $("#swapsNeededWeek");
         var swapsLeft = $("#swapsLeft");
 
-        function loopThroughDays (array) {
+
+
+        function loopThroughDays(array) {
             for (var i = 0; i < dayArray.length; i++) {
                 array[i].on("click", {
                     getSelectedDay: array[i]
@@ -277,7 +288,7 @@
             }
         }
 
-        function checkCounter () {
+        function checkCounter() {
             var array = [];
             for (var i = 0; i < dayArray.length; i++) {
 
@@ -288,7 +299,7 @@
             return array.length;
         }
 
-        function toggleSelectedClass (event) {
+        function toggleSelectedClass(event) {
             event.data.getSelectedDay.toggleClass("selected");
             counter = checkCounter();
             var counterPerMonth = weeklytoMonthly(counter);
@@ -321,7 +332,7 @@
             swapsNeeded.val(swapsNeededVar);
             swapsLeft.val(swapsLeftVar);
         }
-        loopThroughDays (dayArray);
+        loopThroughDays(dayArray);
     </script>
 </body>
 

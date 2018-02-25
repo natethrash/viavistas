@@ -14,6 +14,18 @@
   width: 5em;
 }
 
+.chip {
+  margin-top: 3em;
+}
+
+.center-justified {
+  display: inline-block;
+  text-align: justify;
+  -moz-text-align-last: left;
+  text-align-last: left;
+  margin: 0 auto;
+}
+
 .info-header {
   position: relative;
   font-size: 2em;
@@ -24,6 +36,31 @@
   height: 100px;
   width: 100px;
   line-height: 4em;
+}
+
+.info-text {
+  text-align: justify;
+  margin-left: 34vw;
+}
+
+.profile-section {
+  background: orangered;
+  color: #fff;
+  text-align: center;
+}
+
+.profile-section ul {
+  line-height: 3em;
+  margin-top: 1em;
+}
+
+.profile-section h5 {
+  margin-top: 1em;
+}
+
+.profile-snapshot img {
+  width: 300px;
+  height: 300px;
 }
 
 nav {
@@ -105,5 +142,5 @@ nav {
   background-color: #ffd256;
 }
 .rewards-section .content-wrapper {
-  color: #fff;
+  color: #000;
 }
