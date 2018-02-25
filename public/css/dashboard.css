@@ -9,6 +9,11 @@
   visibility: hidden;
 }
 
+.logo {
+  height: 3em;
+  width: 5em;
+}
+
 nav {
   background: transparent !important;
 }
@@ -29,6 +34,10 @@ nav {
 .intro-wrapper i {
   font-size: 2em;
 }
+
+.icon-block {
+  width: 300px;
+}
 .icon-block:hover {
   background: rgb(138, 137, 137);
 }
@@ -44,13 +53,18 @@ nav {
 .breadcrumb-nav {
   position: absolute;
   right: 3vw;
-  top: 45vh;
+  top: 40vh;
   display: inline-block;
   z-index: 999;
 }
 
 .breadcrumb-nav .nav-btn {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+}
+
+.nav-btn {
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .fin-section {

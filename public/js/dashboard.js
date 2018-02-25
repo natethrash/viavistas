@@ -2,6 +2,14 @@ $(document).ready(function() {
   $(".button-collapse").sideNav();
   $("#fullpage").fullpage({
     //Navigation
+    anchors: [
+      "intro-section",
+      "fin-section",
+      "env-section",
+      "health-section",
+      "rewards-section"
+    ],
+    menu: "#breadcrumb-nav",
 
     //Scrolling
     css3: true,
