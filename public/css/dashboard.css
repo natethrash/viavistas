@@ -103,7 +103,7 @@ nav {
 .breadcrumb-nav {
   position: absolute;
   right: 3vw;
-  top: 40vh;
+  top: 30vh;
   display: inline-block;
   z-index: 999;
 }
