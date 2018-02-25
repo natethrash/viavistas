@@ -17,8 +17,8 @@ var counterWeektoDate;
 var counterMonthToDate;
 
 // CALCULATIONS
-var gasCostPerMileVar = gasCostPerMile(commuteDistance, carMPG, gasPrice);
-var gasCostPerTripVar = gasCostPerTrip(gasCostPerMileVar, commuteDistance);
+//var gasCostPerMileVar = gasCostPerMile(commuteDistance, carMPG, gasPrice);
+var gasCostPerTripVar = gasCostPerTrip(commuteDistance, carMPG, gasPrice);
 var gasMoneySavedPerSwapVar = gasMoneySavedPerSwap(gasCostPerTripVar);
 var wearTearCostPerSwapVar = wearTearCostPerSwap(wearTearCostPerMile, commuteDistance);
 var totalMoneySavedPerSwapVar = totalMoneySavedPerSwap(gasMoneySavedPerSwapVar, wearTearCostPerSwapVar, busFare);
