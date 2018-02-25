@@ -16,8 +16,14 @@
 
 .info-header {
   position: relative;
-  bottom: 20vh;
   font-size: 2em;
+}
+
+.info-circle {
+  border: 4px solid #fff;
+  height: 100px;
+  width: 100px;
+  line-height: 4em;
 }
 
 nav {
