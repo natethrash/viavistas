@@ -24,13 +24,13 @@ var wearTearCostPerSwapVar = wearTearCostPerSwap(wearTearCostPerMile, commuteDis
 var totalMoneySavedPerSwapVar = totalMoneySavedPerSwap(gasMoneySavedPerSwapVar, wearTearCostPerSwapVar, busFare);
 
 
-function gasCostPerMile (commuteDistance, carMPG, gasPrice) {
+function gasCostPerTrip (commuteDistance, carMPG, gasPrice) {
     return (commuteDistance/carMPG) * gasPrice;
 }
 
-function gasCostPerTrip (gasCostPerMile, commuteDistance) {
-    return gasCostPerMile * commuteDistance;
-}
+// function gasCostPerTrip (gasCostPerMile, commuteDistance) {
+//    return gasCostPerMile * commuteDistance;
+//}
 
 function gasMoneySavedPerSwap (gasCostPerTrip) {
     return gasCostPerTrip * 2;
