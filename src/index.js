@@ -56,26 +56,30 @@ function monthlyGasSavings (gasCostPerSwap, counterMonthToDate) {
 }
 
 // CALCULATIONS FOR GOAL PAGE
-var weeklySavingsGoal = 10;
-
 function maxSavingsWeek (totalMoneySavedPerSwap) {
     return 5 * totalMoneySavedPerSwap;
 }
 
+var maxSavingsWeekVar = maxSavingsWeek(totalMoneySavedPerSwapVar);
+
 function currentSavingsWeek (counterWeekToDate, moneySavedPerSwap) {
-    return counterWeekToDate * moneySavedPerSwap
+    return Math.floor(counterWeekToDate * moneySavedPerSwap);
 }
 
 function currentSavingsMonth (counterMonthToDate, moneySavedPerSwap) {
-    return counterMonthToDate * moneySavedPerSwap;
+    return Math.floor(counterMonthToDate * moneySavedPerSwap);
 }
 
 function swapsNeededPerWeek (weeklySavingsGoal, totalMoneySavedPerSwap) {
-    return weeklySavingsGoal/totalMoneySavedPerSwap; // floor or ceiling...?
+    return Math.ceil(weeklySavingsGoal/totalMoneySavedPerSwap); // floor or ceiling...?
 }
 
 function swapsLeftToGo (swapsNeededPerWeek, counterWeekToDate) {
-    return swapsNeededPerWeek - counterWeekToDate;
+    if ((swapsNeededPerWeek - counterWeekToDate) >= 0) {
+        return swapsNeededPerWeek - counterWeekToDate;
+    }
+
+    return 0;
 }
 
 
